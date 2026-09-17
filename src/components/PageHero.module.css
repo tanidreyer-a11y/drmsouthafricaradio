@@ -1,0 +1,61 @@
+.hero {
+  position: relative;
+  min-height: 46vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding-top: 120px;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+}
+
+.bgImg {
+  object-fit: cover;
+  filter: grayscale(0.4) saturate(1.1) contrast(1.05) brightness(0.6);
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(180deg, rgba(10, 17, 34, 0.35) 0%, rgba(10, 17, 34, 0.94) 100%);
+}
+
+.hero.scrimmed .title,
+.hero.scrimmed .sub {
+  color: var(--hero-text);
+}
+.hero.scrimmed .sub {
+  color: var(--hero-text-muted);
+}
+
+.plain {
+  min-height: 34vh;
+  background: linear-gradient(160deg, var(--bg-tint), var(--bg) 70%);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 0 var(--gutter) 56px;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  max-width: 18ch;
+  color: var(--text);
+}
+
+.sub {
+  margin-top: 16px;
+  max-width: 56ch;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}

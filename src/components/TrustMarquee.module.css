@@ -1,0 +1,58 @@
+.band {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-elevated);
+  padding: 28px 0;
+  overflow: hidden;
+}
+
+.caption {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  margin-bottom: 20px;
+  padding: 0 var(--gutter);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  gap: 64px;
+  animation: scroll 32s linear infinite;
+}
+
+.band:hover .track {
+  animation-play-state: paused;
+}
+
+.item {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+}

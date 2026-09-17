@@ -1,0 +1,227 @@
+:root {
+  /* Sampled directly from the real drmsa.org: white canvas, a pale-blue tint
+     band (rgb(231,243,255)), baby-blue buttons (rgb(137,193,255)), navy
+     links/logo (rgb(18,95,180) / rgb(12,72,156)), near-black text (rgb(45,45,45)). */
+  --bg: #ffffff;
+  --bg-tint: #e7f3ff;
+  --bg-elevated: #e7f3ff;
+  --surface: #ffffff;
+  --surface-raised: #f3f9ff;
+  --text: #1f2328;
+  --text-muted: #5b6472;
+  --text-faint: #8a93a3;
+  --navy: #125fb4;
+  --navy-deep: #0c489c;
+  --accent: #89c1ff;
+  --accent-text: #1f2328;
+  --accent-dim: #bcdcff;
+  --accent-soft: rgba(137, 193, 255, 0.22);
+  --line: #d8e6f5;
+
+  --hero-bg: #0a1122;
+  --hero-scrim: rgba(10, 17, 34, 0.7);
+  --hero-text: #f6f8fb;
+  --hero-text-muted: #b9c3d6;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
+  --gutter: clamp(20px, 5vw, 72px);
+  --section-pad: clamp(96px, 12vw, 176px);
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+html {
+  height: 100%;
+  background: var(--bg);
+}
+
+body {
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+::selection {
+  background: var(--navy);
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-tint);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 8px;
+  border: 3px solid var(--bg-tint);
+}
+
+:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.mono {
+  font-family: var(--font-mono), monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.section {
+  padding-top: var(--section-pad);
+  padding-bottom: var(--section-pad);
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out);
+}
+.reveal-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-blur {
+  opacity: 0;
+  filter: blur(6px);
+  transform: translateY(10px);
+  transition: opacity 700ms var(--ease-out), filter 700ms var(--ease-out), transform 700ms var(--ease-out);
+}
+.reveal-blur.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.94) translateY(10px);
+  transition: opacity 520ms var(--ease-out), transform 520ms var(--ease-out);
+}
+.reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.reveal-line {
+  position: relative;
+  opacity: 0;
+  transition: opacity 300ms var(--ease-out);
+}
+.reveal-line.is-visible {
+  opacity: 1;
+}
+.reveal-line::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--navy);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 640ms var(--ease-out);
+}
+.reveal-line.is-visible::before {
+  transform: scaleY(1);
+}
+
+.tilt-card {
+  --glow-x: 50%;
+  --glow-y: 50%;
+  position: relative;
+}
+
+.tilt-card-inner {
+  position: relative;
+  will-change: transform;
+}
+
+.tilt-card-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(240px circle at var(--glow-x) var(--glow-y), rgba(18, 95, 180, 0.1), transparent 65%);
+  opacity: 0;
+  transition: opacity 300ms var(--ease-out);
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tilt-card:hover .tilt-card-glow {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tilt-card-inner {
+    transform: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

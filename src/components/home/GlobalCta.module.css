@@ -1,0 +1,110 @@
+.section {
+  position: relative;
+  padding-top: var(--section-pad);
+  padding-bottom: var(--section-pad);
+  background: var(--bg-tint);
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.title {
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  max-width: 16ch;
+}
+
+.body {
+  margin-top: 18px;
+  color: var(--text-muted);
+  max-width: 48ch;
+}
+
+.countries {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+}
+
+.country {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.country::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.ctaCard {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: clamp(32px, 4vw, 48px);
+}
+
+.ctaTitle {
+  font-size: 1.5rem;
+  max-width: 18ch;
+}
+
+.ctaBody {
+  margin-top: 12px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.ctaRow {
+  margin-top: 28px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.primary {
+  background: var(--accent);
+  color: var(--accent-text);
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 200ms var(--ease-out);
+}
+
+.secondary {
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: border-color 200ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .primary:hover {
+    transform: translateY(-2px);
+  }
+  .secondary:hover {
+    border-color: var(--navy);
+  }
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

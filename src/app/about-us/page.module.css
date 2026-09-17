@@ -1,0 +1,113 @@
+.section {
+  padding-top: var(--section-pad);
+  padding-bottom: var(--section-pad);
+}
+
+.sectionAlt {
+  padding-top: var(--section-pad);
+  padding-bottom: var(--section-pad);
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.lead {
+  max-width: 780px;
+  font-size: 1.2rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.mission {
+  margin-top: 22px;
+  max-width: 780px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.timelineTitle {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  margin-bottom: clamp(36px, 4vw, 56px);
+}
+
+.timeline {
+  position: relative;
+  padding-left: 28px;
+  border-left: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.point {
+  position: relative;
+}
+
+.point::before {
+  content: "";
+  position: absolute;
+  left: -33px;
+  top: 4px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.pointYear {
+  font-family: var(--font-mono), monospace;
+  color: var(--navy);
+  font-size: 0.85rem;
+}
+
+.pointBody {
+  margin-top: 8px;
+  color: var(--text-muted);
+  max-width: 68ch;
+  line-height: 1.65;
+}
+
+.objectivesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.objective {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.objNum {
+  font-family: var(--font-mono), monospace;
+  color: var(--navy);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.objBody {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.closing {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  padding: var(--section-pad) 0;
+}
+
+.closing span {
+  color: var(--navy);
+}
+
+@media (max-width: 760px) {
+  .objectivesGrid {
+    grid-template-columns: 1fr;
+  }
+}
