@@ -1,6 +1,6 @@
 .footer {
   border-top: 1px solid var(--line);
-  padding: clamp(56px, 8vw, 96px) var(--gutter) 40px;
+  padding: clamp(72px, 9vw, 116px) var(--gutter) 48px;
   background: var(--bg-tint);
 }
 
@@ -9,44 +9,44 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 48px;
+  gap: 56px;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
 .logoImg {
-  height: 50px;
+  height: 58px;
   width: auto;
 }
 
 .desc {
   color: var(--text-muted);
-  max-width: 40ch;
-  font-size: 0.92rem;
+  max-width: 42ch;
+  font-size: 1rem;
 }
 
 .heading {
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text-faint);
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .list {
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: 13px;
   list-style: none;
 }
 
 .list a {
   color: var(--text-muted);
-  font-size: 0.92rem;
+  font-size: 1rem;
   transition: color 180ms var(--ease-out);
 }
 .list a:hover {

@@ -116,6 +116,7 @@ type NewsArticle = {
   body: string[];
   image?: string;
   video?: string;
+  gallery?: string[];
 };
 
 export const newsArticles: NewsArticle[] = [
@@ -218,6 +219,7 @@ export const newsArticles: NewsArticle[] = [
       "To increase audience engagement, attendees participated in live Slido polls — a direct way to gauge industry sentiment on digital radio adoption.",
     ],
     image: "/images/webinar-1.png",
+    gallery: ["/images/webinar-poll-1.png", "/images/webinar-poll-2.png", "/images/webinar-poll-3.png"],
   },
 ];
 

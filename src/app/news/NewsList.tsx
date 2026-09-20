@@ -54,6 +54,15 @@ export default function NewsList() {
                   Watch the demonstration →
                 </a>
               )}
+              {a.gallery && (
+                <div className={styles.gallery}>
+                  {a.gallery.map((src) => (
+                    <div className={styles.galleryItem} key={src}>
+                      <Image src={src} alt="" fill sizes="140px" className={styles.img} />
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </Reveal>
         ))}

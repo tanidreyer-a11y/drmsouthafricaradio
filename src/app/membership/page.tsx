@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import TiltCard from "@/components/TiltCard";
+import ImageText from "@/components/ImageText";
 import { membershipTiers, siteMeta } from "@/lib/content";
 import styles from "./page.module.css";
 
@@ -49,6 +50,13 @@ export default function MembershipPage() {
           ))}
         </div>
       </section>
+
+      <ImageText
+        image="/images/radios-warm.jpg"
+        alt="A shelf of vintage analogue radios"
+        title="From community stations to national platforms"
+        body="When larger broadcasters were still weighing their options, community stations were the ones who stepped up first. Radio Pulpit's DRM AM trial and Kofifi FM 97.2's DRM FM success proved the standard works in South Africa — membership is how the next station gets there faster."
+      />
 
       <section className={`${styles.sectionAlt} wrap`}>
         <Reveal as="div" className={styles.stepsHead}>

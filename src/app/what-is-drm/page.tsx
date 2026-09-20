@@ -3,6 +3,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import TiltCard from "@/components/TiltCard";
 import FrequencyDiagram from "@/components/FrequencyDiagram";
+import ImageText from "@/components/ImageText";
 import { whatIsDrm } from "@/lib/content";
 import styles from "./page.module.css";
 
@@ -97,6 +98,14 @@ export default function WhatIsDrmPage() {
           </div>
         </div>
       </section>
+
+      <ImageText
+        reverse
+        image="/images/drmsa-edutrial.png"
+        alt="A DRM receiver beside a tablet showing Journaline distance-learning content"
+        title="Data alongside the audio, not instead of it"
+        body="Journaline lets a single DRM signal carry text, images and structured content alongside the broadcast — DRM SA has used it to deliver distance-learning material directly through a standard receiver, no data connection required."
+      />
     </main>
   );
 }

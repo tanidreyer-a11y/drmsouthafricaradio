@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
+import ImageText from "@/components/ImageText";
 import { about } from "@/lib/content";
 import styles from "./page.module.css";
 
@@ -64,6 +65,14 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
+
+      <ImageText
+        image="/images/aldred-russel.png"
+        alt="DRM SA engineers with a Starwaves DRM receiver overlooking Johannesburg"
+        title="Built by the people testing it in the field"
+        body="Behind every trial is a small team of broadcast engineers physically installing receivers, tuning transmitters and proving the standard works on South African terrain, before it ever reaches a listener's home."
+        caption="DRM SA engineers with a Starwaves DRM receiver, Johannesburg."
+      />
 
       <section className={`${styles.section} wrap`}>
         <Reveal as="h2" className={styles.timelineTitle}>
