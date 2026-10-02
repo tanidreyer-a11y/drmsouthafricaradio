@@ -11,7 +11,7 @@ type PageHeroProps = {
 
 export default function PageHero({ title, sub, image, video }: PageHeroProps) {
   return (
-    <section className={`${styles.hero} ${image ? styles.scrimmed : styles.plain} ${video ? styles.tall : ""}`}>
+    <section className={`${styles.hero} ${image ? styles.scrimmed : styles.plain} ${image ? styles.tall : ""}`}>
       {image && (
         <>
           <div className={styles.bg}>
