@@ -4,7 +4,23 @@
   display: flex;
   align-items: flex-end;
   overflow: hidden;
+  isolation: isolate;
   padding-top: 136px;
+}
+
+.enter {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: phIn 800ms var(--ease-out) 150ms forwards;
+}
+.enterLate {
+  animation-delay: 300ms;
+}
+@keyframes phIn {
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .enter { animation: none; opacity: 1; transform: none; }
 }
 
 .bg {
@@ -35,12 +51,13 @@
   position: absolute;
   inset: 0;
   z-index: -2;
-  background: linear-gradient(180deg, rgba(10, 17, 34, 0.35) 0%, rgba(10, 17, 34, 0.94) 100%);
+  background: linear-gradient(180deg, rgba(6, 10, 20, 0.45) 0%, rgba(6, 10, 20, 0.35) 40%, rgba(6, 10, 20, 0.9) 100%);
 }
 
 .hero.scrimmed .title,
 .hero.scrimmed .sub {
   color: var(--hero-text);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 4px 24px rgba(0, 0, 0, 0.45);
 }
 .hero.scrimmed .sub {
   color: var(--hero-text-muted);

@@ -21,6 +21,13 @@ export default function Hero() {
     return () => queries.forEach((mq) => mq.removeEventListener("change", evaluate));
   }, []);
 
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    v.play().catch(() => {});
+  }, [mounted, useStatic]);
+
   return (
     <section className={styles.hero}>
       <div className={styles.bg}>

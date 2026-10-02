@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "./PageHero.module.css";
-import Reveal from "@/components/Reveal";
 import BgVideo from "@/components/BgVideo";
 
 type PageHeroProps = {
@@ -23,14 +22,8 @@ export default function PageHero({ title, sub, image, video }: PageHeroProps) {
         </>
       )}
       <div className={styles.content}>
-        <Reveal as="h1" className={styles.title} variant="blur">
-          {title}
-        </Reveal>
-        {sub && (
-          <Reveal as="p" className={styles.sub} delay={80}>
-            {sub}
-          </Reveal>
-        )}
+        <h1 className={`${styles.title} ${styles.enter}`}>{title}</h1>
+        {sub && <p className={`${styles.sub} ${styles.enter} ${styles.enterLate}`}>{sub}</p>}
       </div>
     </section>
   );
