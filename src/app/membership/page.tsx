@@ -25,7 +25,8 @@ export default function MembershipPage() {
       <PageHero
         title="Join the movement shaping the future of African radio"
         sub="DRM SA is calling on forward-thinking broadcasters, media innovators and industry stakeholders to become part of South Africa's digital radio revolution."
-        image="/images/sound-waves.jpeg"
+        image="/images/membership-poster.jpg"
+        video="/videos/membership-journey.mp4"
       />
 
       <section className={`${styles.section} wrap`}>
