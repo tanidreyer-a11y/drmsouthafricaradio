@@ -100,6 +100,13 @@ export default function WhatIsDrmPage() {
       </section>
 
       <ImageText
+        image="/images/trial-coverage.jpg"
+        alt="Coverage map from a DRM SA field trial"
+        title="Coverage, measured in the field"
+        body="Claims about reach mean little until they are measured. This map comes from DRM SA's own field trials, plotting where the digital signal was actually received."
+      />
+
+      <ImageText
         reverse
         image="/images/drmsa-edutrial.png"
         alt="A DRM receiver beside a tablet showing Journaline distance-learning content"

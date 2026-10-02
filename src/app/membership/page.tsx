@@ -52,10 +52,11 @@ export default function MembershipPage() {
       </section>
 
       <ImageText
-        image="/images/radios-warm.jpg"
-        alt="A shelf of vintage analogue radios"
-        title="From community stations to national platforms"
-        body="When larger broadcasters were still weighing their options, community stations were the ones who stepped up first. Radio Pulpit's DRM AM trial and Kofifi FM 97.2's DRM FM success proved the standard works in South Africa — membership is how the next station gets there faster."
+        image="/images/bes-2023-team.jpg"
+        alt="The DRM team at the BES Expo 2023"
+        title="Part of a global network"
+        body="DRM SA works alongside the wider DRM Consortium, meeting broadcasters, regulators and receiver manufacturers at industry events around the world. Members join that network, not just a local group."
+        caption="The DRM team at the BES Expo, 2023."
       />
 
       <section className={`${styles.sectionAlt} wrap`}>

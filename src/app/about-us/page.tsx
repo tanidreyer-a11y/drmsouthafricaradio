@@ -40,7 +40,8 @@ export default function AboutPage() {
       <PageHero
         title="Powering the future of radio in Southern Africa"
         sub="Introducing DRM SA GROUP — the revitalised voice of digital radio in South Africa."
-        image="/images/tower-dusk.jpeg"
+        image="/images/about-poster-start.jpg"
+        video="/videos/about-journey.mp4"
       />
 
       <section className={`${styles.section} wrap`}>
@@ -72,6 +73,14 @@ export default function AboutPage() {
         title="Built by the people testing it in the field"
         body="Behind every trial is a small team of broadcast engineers physically installing receivers, tuning transmitters and proving the standard works on South African terrain, before it ever reaches a listener's home."
         caption="DRM SA engineers with a Starwaves DRM receiver, Johannesburg."
+      />
+
+      <ImageText
+        reverse
+        image="/images/test-site.jpg"
+        alt="DRM SA test site with transmitter hut and mast"
+        title="Where the trials happen"
+        body="Every DRM trial runs from real infrastructure: a transmitter, an antenna mast and a team measuring what reaches the listener. This test site is where that work is done."
       />
 
       <section className={`${styles.section} wrap`}>

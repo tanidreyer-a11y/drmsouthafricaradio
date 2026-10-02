@@ -18,6 +18,19 @@
   filter: grayscale(0.4) saturate(1.1) contrast(1.05) brightness(0.6);
 }
 
+.tall {
+  min-height: 72svh;
+}
+
+.bgVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.05) contrast(1.04) brightness(0.72);
+}
+
 .scrim {
   position: absolute;
   inset: 0;

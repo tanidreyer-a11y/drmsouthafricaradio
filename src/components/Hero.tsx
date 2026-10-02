@@ -3,16 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import styles from "./Hero.module.css";
+import { STATIC_QUERIES } from "@/lib/media";
 
-// Static hero is the default on phones, coarse pointers and reduced-motion —
-// the 15MB looping journey video is an enhancement, not the baseline.
-const STATIC_QUERIES = [
-  "(max-width: 720px)",
-  "(orientation: portrait) and (max-width: 1024px)",
-  "(orientation: portrait) and (pointer: coarse)",
-  "(orientation: landscape) and (pointer: coarse) and (max-height: 560px)",
-  "(prefers-reduced-motion: reduce)",
-];
+
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -52,7 +45,7 @@ export default function Hero() {
 
       <div className={styles.content}>
         <h1 className={`${styles.headline} ${styles.entrance}`}>
-          The Static Is Over <em>— Digital Radio Has Arrived</em>
+          The Static Is Over <em>&mdash; Digital Radio Has Arrived</em>
         </h1>
         <p className={`${styles.sub} ${styles.entrance} ${styles.entranceDelay1}`}>
           DRM SA Group is leading the charge to transform Africa&apos;s radio industry with
