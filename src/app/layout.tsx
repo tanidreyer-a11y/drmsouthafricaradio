@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Noto_Sans, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 
-const display = Space_Grotesk({
+const display = Noto_Sans({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["500", "600", "700"],
