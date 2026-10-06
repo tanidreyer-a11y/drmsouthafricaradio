@@ -23,10 +23,13 @@ export default function Hero() {
     setVideoOpen(true);
     dialogRef.current.showModal();
   };
-  const closeVideo = () => dialogRef.current?.close();
+  const closeVideo = () => {
+    setVideoOpen(false);
+    dialogRef.current?.close();
+  };
 
-  // Remove the player whenever the dialog closes (button, backdrop or Escape)
-  // so the video stops playing.
+  // Removing the player stops the video. closeVideo covers the button and
+  // backdrop, onCancel covers Escape, and this listener catches anything else.
   useEffect(() => {
     const dialog = dialogRef.current;
     if (!dialog) return;
@@ -101,6 +104,7 @@ export default function Hero() {
         className={styles.videoDialog}
         aria-label="Distance learning demonstration video"
         onClick={(e) => e.target === e.currentTarget && closeVideo()}
+        onCancel={() => setVideoOpen(false)}
       >
         <button type="button" className={styles.videoClose} onClick={closeVideo} aria-label="Close video">
           &times;
