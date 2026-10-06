@@ -1,9 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 import Link from "next/link";
 import styles from "./Hero.module.css";
 import { STATIC_QUERIES } from "@/lib/media";
+
+const DEMO_VIDEO_URL = "https://youtu.be/a99veSmJXO8?si=uW2i8h1Qt0jZcQrg";
+const DEMO_VIDEO_EMBED = "https://www.youtube-nocookie.com/embed/a99veSmJXO8?autoplay=1&rel=0";
 
 
 
@@ -11,6 +14,16 @@ export default function Hero() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [useStatic, setUseStatic] = useState(true);
   const [mounted, setMounted] = useState(false);
+  const dialogRef = useRef<HTMLDialogElement | null>(null);
+  const [videoOpen, setVideoOpen] = useState(false);
+
+  const openVideo = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (!dialogRef.current) return;
+    e.preventDefault();
+    setVideoOpen(true);
+    dialogRef.current.showModal();
+  };
+  const closeVideo = () => dialogRef.current?.close();
 
   useEffect(() => {
     setMounted(true);
@@ -62,9 +75,9 @@ export default function Hero() {
           <Link href="/membership" className={styles.primary}>
             Become a Member
           </Link>
-          <Link href="/news" className={styles.secondary}>
-            See the FM Demonstration
-          </Link>
+          <a href={DEMO_VIDEO_URL} onClick={openVideo} className={styles.secondary}>
+            See the distance learning demonstration
+          </a>
         </div>
       </div>
 
@@ -72,6 +85,28 @@ export default function Hero() {
         <span className={styles.scrollLine} />
         <span>Scroll</span>
       </div>
+
+      <dialog
+        ref={dialogRef}
+        className={styles.videoDialog}
+        aria-label="Distance learning demonstration video"
+        onClose={() => setVideoOpen(false)}
+        onClick={(e) => e.target === e.currentTarget && closeVideo()}
+      >
+        <button type="button" className={styles.videoClose} onClick={closeVideo} aria-label="Close video">
+          &times;
+        </button>
+        <div className={styles.videoFrame}>
+          {videoOpen && (
+            <iframe
+              src={DEMO_VIDEO_EMBED}
+              title="Distance learning demonstration"
+              allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+              allowFullScreen
+            />
+          )}
+        </div>
+      </dialog>
     </section>
   );
 }
