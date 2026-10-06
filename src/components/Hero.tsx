@@ -25,6 +25,16 @@ export default function Hero() {
   };
   const closeVideo = () => dialogRef.current?.close();
 
+  // Remove the player whenever the dialog closes (button, backdrop or Escape)
+  // so the video stops playing.
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    const onClose = () => setVideoOpen(false);
+    dialog.addEventListener("close", onClose);
+    return () => dialog.removeEventListener("close", onClose);
+  }, []);
+
   useEffect(() => {
     setMounted(true);
     const queries = STATIC_QUERIES.map((q) => window.matchMedia(q));
@@ -90,7 +100,6 @@ export default function Hero() {
         ref={dialogRef}
         className={styles.videoDialog}
         aria-label="Distance learning demonstration video"
-        onClose={() => setVideoOpen(false)}
         onClick={(e) => e.target === e.currentTarget && closeVideo()}
       >
         <button type="button" className={styles.videoClose} onClick={closeVideo} aria-label="Close video">
