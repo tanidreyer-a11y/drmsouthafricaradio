@@ -35,7 +35,7 @@ export default function Nav() {
             <Link
               key={item.href}
               href={item.href}
-              className={`${styles.link} ${pathname === item.href ? styles.linkActive : ""}`}
+              className={`${styles.link} ${pathname === item.href || pathname.startsWith(`${item.href}/`) ? styles.linkActive : ""}`}
             >
               {item.label}
             </Link>

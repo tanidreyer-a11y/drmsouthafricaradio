@@ -29,7 +29,7 @@ export default function NewsPreview() {
         {latest.map((article, i) => (
           <Reveal key={article.slug} delay={i * 80} variant="scale">
             <TiltCard max={5}>
-              <Link href={`/news#${article.slug}`} className={styles.card}>
+              <Link href={`/news/${article.slug}`} className={styles.card}>
                 <div className={styles.imgWrap}>
                   {article.image && (
                     <Image
