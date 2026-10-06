@@ -1,26 +1,15 @@
 import type { Metadata } from "next";
-import { Noto_Sans, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 
-const display = Noto_Sans({
-  variable: "--font-display",
+// drmsa.org uses Noto Sans for everything, so every font role points at it.
+const notoSans = Noto_Sans({
+  variable: "--font-noto-sans",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
-});
-
-const body = IBM_Plex_Sans({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-});
-
-const mono = IBM_Plex_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -31,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+    <html lang="en" className={notoSans.variable}>
       <body>
         <Nav />
         {children}

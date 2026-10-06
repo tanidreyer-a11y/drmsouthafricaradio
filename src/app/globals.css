@@ -1,4 +1,8 @@
 :root {
+  --font-display: var(--font-noto-sans);
+  --font-body: var(--font-noto-sans);
+  --font-mono: var(--font-noto-sans);
+
   /* Sampled directly from the real drmsa.org: white canvas, a pale-blue tint
      band (rgb(231,243,255)), baby-blue buttons (rgb(137,193,255)), navy
      links/logo (rgb(18,95,180) / rgb(12,72,156)), near-black text (rgb(45,45,45)). */
@@ -7,7 +11,7 @@
   --bg-elevated: #e7f3ff;
   --surface: #ffffff;
   --surface-raised: #f3f9ff;
-  --text: #1f2328;
+  --text: #2d2d2d;
   --text-muted: #5b6472;
   --text-faint: #8a93a3;
   --navy: #125fb4;
@@ -30,7 +34,22 @@
   --gutter: clamp(20px, 5vw, 72px);
   --section-pad: clamp(96px, 12vw, 176px);
 
+  /* Type scale from drmsa.org */
+  --h1: 54px;
+  --h2: 40px;
+  --h3: 24px;
+  --h4: 20px;
+
   color-scheme: light;
+}
+
+@media (max-width: 575px) {
+  :root {
+    --h1: 32px;
+    --h2: 24px;
+    --h3: 20px;
+    --h4: 18px;
+  }
 }
 
 * {
@@ -55,8 +74,9 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body), system-ui, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -64,10 +84,14 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--font-display), system-ui, sans-serif;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.08;
+  font-weight: 700;
+  line-height: 1.4;
 }
+
+h1 { font-size: var(--h1); }
+h2 { font-size: var(--h2); }
+h3 { font-size: var(--h3); }
+h4 { font-size: var(--h4); }
 
 a {
   color: inherit;

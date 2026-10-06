@@ -26,7 +26,7 @@
 }
 
 .timelineTitle {
-  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-size: var(--h2);
   margin-bottom: clamp(36px, 4vw, 56px);
 }
 
@@ -98,7 +98,7 @@
 
 .closing {
   text-align: center;
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: var(--h2);
   padding: var(--section-pad) 0;
 }
 

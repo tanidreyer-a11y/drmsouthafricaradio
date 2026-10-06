@@ -14,7 +14,7 @@
 }
 
 .title {
-  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  font-size: var(--h2);
   max-width: 16ch;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .ctaTitle {
-  font-size: 1.5rem;
+  font-size: var(--h3);
   max-width: 18ch;
 }
 
@@ -77,8 +77,8 @@
   background: var(--accent);
   color: var(--accent-text);
   padding: 14px 24px;
-  border-radius: 999px;
-  font-weight: 600;
+  border-radius: 8px;
+  font-weight: 700;
   font-size: 0.9rem;
   transition: transform 200ms var(--ease-out);
 }
@@ -87,8 +87,8 @@
   border: 1px solid var(--line);
   color: var(--text);
   padding: 14px 24px;
-  border-radius: 999px;
-  font-weight: 500;
+  border-radius: 8px;
+  font-weight: 700;
   font-size: 0.9rem;
   transition: border-color 200ms var(--ease-out);
 }
